@@ -1,13 +1,72 @@
- //declare bacteria variables here   
- void setup()   
- {     
- 	//initialize bacteria variables here   
- }   
- void draw()   
- {    
- 	//move and show the bacteria   
- }  
- class Bacteria    
- {     
- 	//lots of java!   
- }    
+Bacteria[] Walk = new Bacteria[2000];
+void setup() {
+  size(800, 800);
+  for (int i = 0; i < Walk.length; i++) {
+    Walk[i] = new Bacteria();
+  }
+}
+int m = 5;
+int s = 14;
+
+void draw() {
+  background(192);
+  for (int i = 0; i < Walk.length; i++) {
+    Walk[i].move();
+    Walk[i].show();
+  }
+}
+class Bacteria {
+  int myX, myY;
+  Bacteria() {
+    myX = (int)(Math.random()*800)+1;
+    myY = (int)(Math.random()*800)+1;
+  }
+  void move() {
+    /*if (mouseX > myX-100 && mouseX < myX+100) {
+     if (myX <= mouseX) {
+     myX = myX +((int)(Math.random()*s)-m);
+     } else if (myX > mouseX) {
+     myX = myX -((int)(Math.random()*s)-m);
+     }
+     } else {
+     myX = myX+(int)((Math.random()*s)-s/2);
+     }
+     if (mouseY > myY-100 && mouseY < myY+100) {
+     if (myY <= mouseY) {
+     myY = myY +((int)(Math.random()*s)-m);
+     } else if (myY > mouseY) {
+     myY = myY -((int)(Math.random()*s)-m);
+     }
+     } else {
+     myY = myY +(int)((Math.random()*s)-s/2);
+     }*/
+
+    if (myX <= mouseX) {
+      myX = myX +((int)(Math.random()*s)-m);
+    } else if (myX > mouseX) {
+      myX = myX -((int)(Math.random()*s)-m);
+    }
+    if (myY <= mouseY) {
+      myY = myY +((int)(Math.random()*s)-m);
+    } else if (myY > mouseY) {
+      myY = myY -((int)(Math.random()*s)-m);
+    }
+    if (myX <= 0) {
+      myX = 0;
+    } else if (myX >= 800) {
+      myX = 800;
+    }
+    if (myY <= 0) {
+      myY = 0;
+    } else if (myY >= 800) {
+      myY = 800;
+    }
+  }
+  void show() {
+    noStroke();
+    fill(255, (int)(Math.random()*255), 0);
+    ellipse(myX, myY-2, 3, 3);
+    fill(0, (int)(Math.random()*255), 255);
+    ellipse(myX, myY+2, 3, 3);
+  }
+}
