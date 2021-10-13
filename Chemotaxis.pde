@@ -64,9 +64,9 @@ class Bacteria {
   }
   void show() {
     noStroke();
-    fill(255, (int)(Math.random()*255), 0);
-    ellipse(myX, myY-2, 3, 3);
-    fill(0, (int)(Math.random()*255), 255);
-    ellipse(myX, myY+2, 3, 3);
+    fill(255, (int)(Math.random()*255), 0,150);
+    ellipse(myX, myY-2, 4, 4);
+    fill(0, (int)(Math.random()*255), 255,150);
+    ellipse(myX, myY+2, 4, 4);
   }
 }
