@@ -22,24 +22,6 @@ class Bacteria {
     myY = (int)(Math.random()*800)+1;
   }
   void move() {
-    /*if (mouseX > myX-100 && mouseX < myX+100) {
-     if (myX <= mouseX) {
-     myX = myX +((int)(Math.random()*s)-m);
-     } else if (myX > mouseX) {
-     myX = myX -((int)(Math.random()*s)-m);
-     }
-     } else {
-     myX = myX+(int)((Math.random()*s)-s/2);
-     }
-     if (mouseY > myY-100 && mouseY < myY+100) {
-     if (myY <= mouseY) {
-     myY = myY +((int)(Math.random()*s)-m);
-     } else if (myY > mouseY) {
-     myY = myY -((int)(Math.random()*s)-m);
-     }
-     } else {
-     myY = myY +(int)((Math.random()*s)-s/2);
-     }*/
 
     if (myX <= mouseX) {
       myX = myX +((int)(Math.random()*s)-m);
