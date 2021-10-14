@@ -1,6 +1,6 @@
 Bacteria[] Walk = new Bacteria[2000];
 void setup() {
-framerate(60);
+frameRate(60);
   size(800, 800);
   for (int i = 0; i < Walk.length; i++) {
     Walk[i] = new Bacteria();
