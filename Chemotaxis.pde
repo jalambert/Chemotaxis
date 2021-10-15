@@ -23,7 +23,7 @@ class Bacteria {
     myY = (int)(Math.random()*800)+1;
   }
   void move() {
-    if (keyPressed == true) {
+    if (mousePressed == true) {
       if (myX >= mouseX) {
         myX = myX +((int)(Math.random()*s)-m);
       } else if (myX < mouseX) {
