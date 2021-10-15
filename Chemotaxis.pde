@@ -1,4 +1,4 @@
-Bacteria[] Walk = new Bacteria[2000];
+Bacteria[] Walk = new Bacteria[1000];
 void setup() {
   frameRate(60);
   size(800, 800);
