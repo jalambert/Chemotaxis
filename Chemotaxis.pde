@@ -1,6 +1,6 @@
 Bacteria[] Walk = new Bacteria[2000];
 void setup() {
-frameRate(60);
+  frameRate(60);
   size(800, 800);
   for (int i = 0; i < Walk.length; i++) {
     Walk[i] = new Bacteria();
@@ -23,16 +23,28 @@ class Bacteria {
     myY = (int)(Math.random()*800)+1;
   }
   void move() {
-
-    if (myX <= mouseX) {
-      myX = myX +((int)(Math.random()*s)-m);
-    } else if (myX > mouseX) {
-      myX = myX -((int)(Math.random()*s)-m);
-    }
-    if (myY <= mouseY) {
-      myY = myY +((int)(Math.random()*s)-m);
-    } else if (myY > mouseY) {
-      myY = myY -((int)(Math.random()*s)-m);
+    if (keyPressed == true) {
+      if (myX >= mouseX) {
+        myX = myX +((int)(Math.random()*s)-m);
+      } else if (myX < mouseX) {
+        myX = myX -((int)(Math.random()*s)-m);
+      }
+      if (myY >= mouseY) {
+        myY = myY +((int)(Math.random()*s)-m);
+      } else if (myY < mouseY) {
+        myY = myY -((int)(Math.random()*s)-m);
+      }
+    } else {
+      if (myX <= mouseX) {
+        myX = myX +((int)(Math.random()*s)-m);
+      } else if (myX > mouseX) {
+        myX = myX -((int)(Math.random()*s)-m);
+      }
+      if (myY <= mouseY) {
+        myY = myY +((int)(Math.random()*s)-m);
+      } else if (myY > mouseY) {
+        myY = myY -((int)(Math.random()*s)-m);
+      }
     }
     if (myX <= 0) {
       myX = 0;
@@ -47,9 +59,10 @@ class Bacteria {
   }
   void show() {
     noStroke();
-    fill(255, (int)(Math.random()*255), 0,150);
-    ellipse(myX, myY-2, 4, 4);
-    fill(0, (int)(Math.random()*255), 255,150);
-    ellipse(myX, myY+2, 4, 4);
+    fill(255, (int)(Math.random()*255), 0, 150);
+    ellipse(myX, myY-2, (int)(Math.random()*10), (int)(Math.random()*10));
+    fill(0, (int)(Math.random()*255), 255, 150);
+    ellipse(myX, myY+2, (int)(Math.random()*10), (int)(Math.random()*10));
   }
 }
+
