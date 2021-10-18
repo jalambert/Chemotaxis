@@ -5,6 +5,8 @@ void setup() {
   int i = 0;
   for (int y = 0; y < 801; y+=20) {
     for (int x = 0; x < 801; x += 20) {
+      fill(0,255,255);
+      ellipse(x,y,7,7);
       Walk[i] = new Bacteria(x, y);
       i++;
     }
@@ -17,6 +19,13 @@ int s = 2;
 void draw() {
 
   background(192);
+  for (int y = 0; y < 801; y+=20) {
+    for (int x = 0; x < 801; x += 20) {
+      noFill();
+      stroke(0,255,255);
+      ellipse(x,y,7,7);
+    }
+  }
   for (int i = 0; i < Walk.length; i++) {
     Walk[i].move();
     Walk[i].show();
@@ -33,10 +42,10 @@ class Bacteria {
   }
   void move() {
 
-    if (sq(mouseX-myX)+sq(mouseY-myY)<sq(100)) {
+    if (sq(mouseX-myX)+sq(mouseY-myY)<sq(80)) {
       myX = myX +((int)(Math.random()*15)-7);
       myY = myY +((int)(Math.random()*15)-7);
-      myColor = color(0, (int)(Math.random()*255), 255);
+      myColor = color(255, (int)(Math.random()*255), 0);
     } else if (myX < homeX) {
       myX = myX +((int)(Math.random()*s)-m);
     } else if (myX > homeX) {
@@ -46,7 +55,8 @@ class Bacteria {
       myY = myY +((int)(Math.random()*s)-m);
     } else if (myY > homeY) {
       myY = myY -((int)(Math.random()*s)-m);
-    } else {
+    }
+    if (myX == homeX && myY == homeY) {
       myColor = color(0, 0, 255);
     }
 
