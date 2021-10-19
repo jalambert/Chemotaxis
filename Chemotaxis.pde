@@ -46,7 +46,9 @@ class Bacteria {
       myX = myX +((int)(Math.random()*15)-7);
       myY = myY +((int)(Math.random()*15)-7);
       myColor = color(255, (int)(Math.random()*255), 0);
-    } else if (myX < homeX) {
+    }
+    if(mousePressed != true){
+    if (myX < homeX) {
       myX = myX +((int)(Math.random()*s)-m);
     } else if (myX > homeX) {
       myX = myX -((int)(Math.random()*s)-m);
@@ -59,7 +61,7 @@ class Bacteria {
     if (myX == homeX && myY == homeY) {
       myColor = color(0, 0, 255);
     }
-
+    }
     if (myX <= 0) {
       myX = 0;
     } else if (myX >= 800) {
